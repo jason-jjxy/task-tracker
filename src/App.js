@@ -1,15 +1,22 @@
 import Header from './components/Header'
+import Tasks from './components/Tasks'
+import React, {useEffect, useState} from 'react'
 
-function App() {
-  const name = 'Brad'
-  const x = false
+const App = () => {
+    const [tasks, setTasks] = useState([
+        {
+            id: 1,
+            text:" Meeting at School",
+        },
+        {
+            id: 2,
+            text: "Food Shopping"
+        }
+    ])
   return (
     <div className="container">
-      <h1> Hello From React</h1>
-      <h2>Hello {x ? 'Yes' : 'No'}</h2>
-      <Header title = {1}/>
-      
-      <Header/>
+      <Header />
+      <Tasks tasks={tasks}/>
     </div>
   );
 }
